@@ -1,0 +1,9 @@
+<h1>fruits list</h1>
+<ul>
+	<li ng-repeat="fruit in fruits">
+	{{fruit.name}}
+	<a href="#/fruits/{{fruit._id}}">detail</a>
+	<a href="#/delete_fruit/{{fruit._id}}">remove</a>
+	</li>
+</ul>
+<a href="#/add">Add</a>

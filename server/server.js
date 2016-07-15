@@ -18,6 +18,7 @@ MongoClient.connect(URL, function(err, db){
   DB = db;
   require('./gets.js').gets(app,DB);
   require('./posts.js').posts(app,DB);
+  require('./del.js').del(app,DB);
 });
 
 
