@@ -23,6 +23,10 @@ fruitsApp.config(['$routeProvider',
 				template: '',
 				controller: 'fruitDeleteCtrl'
 			}).
+			when('/edit_fruit/:fruitId',{
+				templateUrl: 'templates/fruit-edit.html',
+				controller: 'fruitEditCtrl'
+			}).
 			otherwise({
 				redirectTo: '/fruits'
 			});

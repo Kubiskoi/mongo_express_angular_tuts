@@ -22,6 +22,13 @@ fruitsServices.factory('postFruit', ['$resource',
     });
   }]);
 
+fruitsServices.factory('putFruit', ['$resource',
+  function($resource){
+    return $resource('edit_fruit/:fruitId', {}, {
+      send_to_server: {method:'put',params:{}}
+    });
+  }]);
+
 fruitsServices.factory('deleteFruit', ['$resource',
   function($resource){
     return $resource('delete_fruit/:fruitId', {}, 'delete');

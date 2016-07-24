@@ -15,6 +15,22 @@ fruitsControllers.controller('fruitDetailCtrl',['$scope','$routeParams','Fruits'
 	}
 	])
 
+fruitsControllers.controller('fruitEditCtrl',['$scope','$routeParams','Fruits','putFruit','$location',
+	function($scope,$routeParams,Fruits,putFruit,$location){
+		Fruits.query($routeParams).$promise.then(function(fruit){
+			$scope.name = fruit[0].name;
+			$scope.desc = fruit[0].desc;	
+		})
+
+		$scope.submit = function() {
+			putFruit.send_to_server($routeParams,{"name":$scope.name,"desc":$scope.desc}).$promise.then(function(){
+      			$location.path('#/fruits');
+    		});
+		}
+		
+	}
+	])
+
 fruitsControllers.controller('fruitAddCtrl',['$scope','postFruit','$location',
 	function($scope,postFruit,$location){
 		$scope.submit = function() {

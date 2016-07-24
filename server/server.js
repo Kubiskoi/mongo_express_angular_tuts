@@ -19,6 +19,7 @@ MongoClient.connect(URL, function(err, db){
   require('./gets.js').gets(app,DB);
   require('./posts.js').posts(app,DB);
   require('./del.js').del(app,DB);
+  require('./put.js').put(app,DB);
 });
 
 
